@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: base-nuxtjs:2.15
+    env_file:
+      - .env
+    ports:
+      - "8000:80"
+    volumes:
+      - logs:/var/log/artifakt
+
+volumes:
+  logs:
